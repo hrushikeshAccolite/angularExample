@@ -1,0 +1,10 @@
+<div class="">
+  <ul>
+    <li>Id: {{inputStudent.id}}</li>
+    <li>Name: {{inputStudent.name}}</li>
+    <li>Gender: {{inputStudent.gender}}</li>
+    <li>Rank: {{inputStudent.rank}}</li>
+  </ul>
+  <input [(ngModel)]="newComponent.rank" placeholder="update rank" class="border border-gray-300"/>
+  <button class="border border-gray-300 p-1 rounded-md mx-1" (click)="sendToParent(inputStudent)">Update</button>
+</div>

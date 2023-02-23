@@ -1,0 +1,29 @@
+<div class="ml-2">
+<div class="flex items-center my-3">
+    <h1 class="text-xl font-medium">Students</h1>
+    <button (click)="sortByRankAsc(students)" class="border border-gray-300 p-1 rounded-md ml-6">Sort Ascending</button>
+    <button (click)="sortByRankDesc(students)" class="border border-gray-300 p-1 rounded-md ml-6">Sort Descending</button>
+</div>
+<table class="table-auto">
+    <thead>
+      <tr>
+        <th class="px-4 py-2">Id</th>
+        <th class="px-4 py-2">Name</th>
+        <th class="px-4 py-2">Gender</th>
+        <th class="px-4 py-2">Rank</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let stud of students">
+            <td class="border border-gray-100 px-4 py-2 font-medium">{{stud.id}}</td>
+            <td class="border border-gray-100 px-4 py-2 font-medium">{{stud.name}}</td>
+            <td class="border border-gray-100 px-4 py-2 font-medium">{{stud.gender}}</td>
+            <td class="border border-gray-100 px-4 py-2 font-medium">{{stud.rank}}</td>
+            <button (click)="selectStudent(stud)" class="border border-gray-300 p-1 rounded-md mx-1">Select</button>
+        </tr>
+  </table>
+</div>
+<div class="mt-4 ml-2" *ngIf="selectedStudent.id != 0">
+    <span>Selected Student : {{selectedStudent.id}}</span>
+    <app-student-detail [inputStudent]="selectedStudent" (newStudent)="updateDetailsFromChild($event)"></app-student-detail>
+</div>
