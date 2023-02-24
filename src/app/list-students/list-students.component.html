@@ -9,7 +9,7 @@
       <tr>
         <th class="px-4 py-2">Id</th>
         <th class="px-4 py-2">Name</th>
-        <th class="px-4 py-2">Gender</th>
+        <th class="px-4 py-2" >Gender</th>
         <th class="px-4 py-2">Rank</th>
       </tr>
     </thead>
@@ -17,7 +17,7 @@
         <tr *ngFor="let stud of students">
             <td class="border border-gray-100 px-4 py-2 font-medium">{{stud.id}}</td>
             <td class="border border-gray-100 px-4 py-2 font-medium">{{stud.name}}</td>
-            <td class="border border-gray-100 px-4 py-2 font-medium">{{stud.gender}}</td>
+            <td class="border border-gray-100 px-4 py-2 font-medium" [ngStyle]="{backgroundColor: stud.gender == 'male' ? 'blue' : 'pink'}">{{stud.gender}}</td>
             <td class="border border-gray-100 px-4 py-2 font-medium">{{stud.rank}}</td>
             <button (click)="selectStudent(stud)" class="border border-gray-300 p-1 rounded-md mx-1">Select</button>
         </tr>
